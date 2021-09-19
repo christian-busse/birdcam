@@ -56,7 +56,7 @@ network={
 * Die benötigten Libraries installieren
 * `sudo apt install python3-picamera python3-pip python3-gpiozero python3-pip uv4l uv4l-raspicam uv4l-raspicam-extras uv4l-webrtc`
 * Kamera in raspi-config aktivieren
-* `sudo raspi-config'
+* `sudo raspi-config`
 * (optional) den Hostname des Raspberry Pi
 * git clone https://github.com/christian-busse/birdcam
 * im Verzeichnis birdcam den folgenden Befehl ausführen:

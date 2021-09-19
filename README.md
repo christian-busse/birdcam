@@ -62,9 +62,13 @@ network={
 * [Quelle](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md)
 * jetzt den Raspberry starten
 * per SSH auf Raspberry zugreifen
-* sudo apt update 
-* sudo apt full-upgrade
-* sudo apt install git python-picamera python3-picamera
+* Die Reposity der Streaming Library UV4L hinzufügen
+* `curl https://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -`
+* `echo 'deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main' | sudo tee -a /etc/apt/sources.list`
+* `sudo apt update`
+* `sudo apt full-upgrade`
+* Die benötigten Libraries installieren
+* `sudo apt install python3-picamera python3-pip python3-gpiozero python3-pip uv4l uv4l-raspicam uv4l-raspicam-extras uv4l-webrtc`
 * Kamera in raspi-config aktivieren
 * (optional) den Hostname des Raspberry Pi
 * git clone https://github.com/christian-busse/birdcam

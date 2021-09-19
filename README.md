@@ -12,39 +12,6 @@ Auf dem Streaming-Client soll später auch di KI-Erkennung laufen. momentan wird
 
 mit folgendem Befehl kann das Script gestartet werden und wird auch nachdem sich der Benutzer vom Server abgemeldet hat, weiter ausgeführt
 
-``` bash
-nohup python3 getJpgFromStream.py >output.log >error.log &
-```
-
-## Installation
-
-* Raspberry Pi OS Lite auf SD-Karte geflasht
-* per SSH auf Raspberry zugreifen
-* sudo apt update 
-* sudo apt full-upgrade
-* sudo apt install git python-picamera python3-picamera
-* Kamera in raspi-config aktivieren
-* git clone https://git.coco.study/mschmal2/birdsonbikes.git
-* sudo shutdown now
-* WLAN-Konfigurieren:
-    * Speicherkarte in deinen Rechner einlegen
-    * auf "boot" eine Datei mit dem Namen ``wpa_supplicant.conf`` anlegen
-    * Datei im Editor öffnen und folgenden Code eingeben:
-
-```bash ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-country=de
-update_config=1
-network={
-    ssid="<Name of your wireless LAN>"
-    psk="<Password for your wireless LAN>"
-}
-```
-
-[Quelle](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md)
-
-ssh pi@campi2 oder 3
-pw: birdie
-
 # Anleitung
 
 ## Die Komponenten
@@ -75,18 +42,14 @@ pw: birdie
 
 <img src="assets-README/GPIO.png">
 
-## Wifi verbindung herstellen
 
-    1. Den Raspberry Pi ausschalten (Stromkabel entfernen)
+## Installation
 
-    2. Die SD Karte auf der Rückseite herausnehmen und in deinen Rechner einlegen
-
-    3. Einen beliebigen Text Editor öffen (NotdePad, VS Code)
-
-    4. Die SD Karte auswählen auf dem Ordner Boot eine neue Datei mit dem Namen: wpa_supplicant.conf anlegen
-
-    5. Folgenden Text in die Datei kopieren:
-
+* Raspberry Pi OS Lite auf SD-Karte geflasht
+* WLAN-Konfigurieren:
+  * Speicherkarte in deinen Rechner einlegen
+  * auf "boot" eine Datei mit dem Namen ``wpa_supplicant.conf`` anlegen
+  * Datei im Editor öffnen und folgenden Code eingeben:
 ```bash ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 country=de
 update_config=1
@@ -95,26 +58,19 @@ network={
     psk="<Password for your wireless LAN>"
 }
 ```
-    6. <Name of your wirless LAN> und <Password for your wireless LAN> ersetzen.
-
-    7. Die Datei abspeichern und die SD Karte auswerfen.
-
-    8. Die SD Karte wieder in den Raspberry Pi einlegen.
-
-    9. Nach 5 minuten sollte sich der Raspberry Pi mit dem Internet verbunden haben
-    (Um das zu überprüfen kann man per SSH auf den Raspberry Pi gehen)
-    Dafür die Bash öffnen und: 
-
-``` bash 
-ssh <name des raspberry pi´s> eingeben 
+* wpa_supplicant.conf und eine leere Datei mit dem Namen "ssh" auf die "boot"-Partition der Speicherkarte kopieren
+* [Quelle](https://www.raspberrypi.org/documentation/configuration/wireless/headless.md)
+* jetzt den Raspberry starten
+* per SSH auf Raspberry zugreifen
+* sudo apt update 
+* sudo apt full-upgrade
+* sudo apt install git python-picamera python3-picamera
+* Kamera in raspi-config aktivieren
+* (optional) den Hostname des Raspberry Pi
+* git clone https://github.com/christian-busse/birdcam
+* im Verzeichnis birdcam den folgenden Befehl ausführen:
+``` bash
+nohup python3 birdcam.py >output.log >error.log &
 ```
-    Namen sind in unserem Fall: 
-    (pi@campi1) oder (pi@campi3)
-    Das Passwort ist (birdie)
-
-    Wenn alles richtig gelaufen ist sollte man jetzt mit SSH auf dem Raspberry Pi sein. 
-
-
-
-
-
+* jetzt kann man die SSH-Verbindung zum Raspberry mit ```exit``` wieder schließen
+* um das Birdcam-Programm bei jedem Start auszuführen, bitte diese [Anleitung](https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup/method-1-rclocal) befolgen

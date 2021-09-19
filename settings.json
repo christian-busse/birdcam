@@ -1,0 +1,19 @@
+{
+  "xResolution": 1020,
+  "yResolution": 720,
+  "vFlip": true,
+  "hFlip": true,
+  "sharpness": 100,
+  "exposure_mode": "auto",
+  "meter_mode": "average",
+  "awb_mode": "auto",
+  "numberOfPicturesToTake": 20,
+  "secondsBetweenPictures": 0.5,
+  "redLedPIN": 18,
+  "yellowLedPIN": 15,
+  "greenLedPIN": 14,
+  "pirPIN": 23,
+  "pirQueue_len": 50,
+  "pirSample_rate": 100,
+  "pirThreshold": 0.9
+}

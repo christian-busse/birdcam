@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BirdBox</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <img src="http://{{ data.myIP }}:8080/stream/video.mjpeg" />
+    <form method="POST" action="/">
+      <input type="submit" name="action1" value="Do Something" />
+      <input type="submit" name="action2" value="Do Something Else" />
+    </form>
+    {% if data.message %}
+      <p>{{ data.message }}</p>
+    {% endif %}
+  </body>
+</html>

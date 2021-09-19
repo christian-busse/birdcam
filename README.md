@@ -1,34 +1,21 @@
-# BirdsOnBikes
-## Setup
-Raspberry Pi 4 + Camera Module V2
+# Birdcam by BirdsOnBikes
+## Anleitung
 
-mit der Bibliothek [UV4L](https://raspberry-valley.azurewebsites.net/UV4L/), die ein einigermaßen flüssigen Videostream ermöglicht
+### Die Komponenten
 
-Der Stream wird als Proxy-Server an stream.birdsh.it weitergeleitet
-
-Der Streaming-Client befindet sich auf cam.yolobird.com
-
-Auf dem Streaming-Client soll später auch di KI-Erkennung laufen. momentan wird dort jede Sekunde ein Standbild aus dem Stream gespeichert. Dieses Material könnte später auch genutzt werden um die KI weiter zu trainieren um später Vogelarten zu unterscheiden
-
-mit folgendem Befehl kann das Script gestartet werden und wird auch nachdem sich der Benutzer vom Server abgemeldet hat, weiter ausgeführt
-
-# Anleitung
-
-## Die Komponenten
-
-### RaspberryPi 3
+#### RaspberryPi 3
 <img src="assets-README/Raspi.png" width="200">
 
-### Raspberry Kamera V.2
+#### Raspberry Kamera V.2
 <img src="assets-README/Kamera.png" width="200">
 
-### PIR Sensor (Bewegungssensor)
+#### PIR Sensor (Bewegungssensor)
 <img src="assets-README/PIRSensor.png" width="200">
 
-### 3x Kabel Weiblich/ Weiblich
+#### 3x Kabel Weiblich/ Weiblich
 <img src="assets-README/Kabel.png" width="200">
 
-## Zusammenbauen der Komponenten
+### Zusammenbauen der Komponenten
 
     1. Den Gehäusedecke des Raspberry Pi´s abnehmen. 
 
@@ -43,9 +30,9 @@ mit folgendem Befehl kann das Script gestartet werden und wird auch nachdem sich
 <img src="assets-README/GPIO.png">
 
 
-## Installation
+### Installation
 
-* Raspberry Pi OS Lite auf SD-Karte geflasht
+* [Raspberry Pi OS Lite](https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit) auf SD-Karte geflasht
 * WLAN-Konfigurieren:
   * Speicherkarte in deinen Rechner einlegen
   * auf "boot" eine Datei mit dem Namen ``wpa_supplicant.conf`` anlegen
